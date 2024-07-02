@@ -1,23 +1,24 @@
 pipeline {
     agent {
         docker {
-            image 'cypress-with-xvfb'
+            image 'cypress/included:8.6.0' // Tutaj podaj odpowiedni obraz Docker
+            args '-v /dev/shm:/dev/shm' // Opcjonalne, jeśli potrzebujesz przekierowania pamięci RAM
         }
     }
     stages {
-        stage('Checkout') {
+        stage('Build') {
             steps {
-                checkout scm
+                // Twoje kroki budowania projektu
             }
         }
-        stage('Install Dependencies') {
+        stage('Test') {
             steps {
-                sh 'npm install'
-            }
-        }
-        stage('Run Tests') {
-            steps {
-                sh 'npx cypress run'
+                script {
+                    docker.image('cypress/included:8.6.0').inside {
+                        sh 'npm install'
+                        sh 'npx cypress run'
+                    }
+                }
             }
         }
     }
