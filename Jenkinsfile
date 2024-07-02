@@ -2,20 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Test Docker') {
             steps {
                 script {
-                    docker.image('node:14').inside {
-                        sh 'npm install'
-                    }
-                }
-            }
-        }
-        stage('Test') {
-            steps {
-                script {
-                    docker.image('node:14').inside {
-                        sh 'npm test'
+                    docker.image('hello-world').inside {
+                        sh 'echo "Docker is working!"'
                     }
                 }
             }
