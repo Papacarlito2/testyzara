@@ -1,0 +1,12 @@
+{
+    "correctEmail": "testmail123@gmail.com",
+    "incorrectEmail": "testmail123@@gmail.com",
+    "correctPass": "Testowanie3$",
+    "shortPass": "test",
+    "longValue": "sdniuascixjzioxjciojaiowrrjiuaundijnasjinfaismiashuiejiaowdmaskomdasijfnuifjsdiosjadiosadioasjdioajsidasoidjaisod",
+    "correctFirstName": "Jan",
+    "incorrectFirstName": "#$@%sadsada@#",
+    "correctLastName": "Kowalski",
+    "incorrectLastName": "$%^sdfg&^$",
+    "correctTelNumber": "534822399"
+}

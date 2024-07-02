@@ -1,0 +1,7 @@
+{
+    "passInfo": "Wprowadź mocne hasło: Co najmniej 8 znaków, w tym wielkie i małe litery oraz cyfry.",
+    "emailInfo": "Wprowadź prawidłowy adres e-mail.",
+    "missFieldInfo": "To pole jest obowiązkowe.",
+    "unacceptedTermsInfo": "Musisz zaakceptować politykę prywatności.",
+    "longValueInfo": "Prosimy wprowadzić nie więcej niż 60 znaków."    
+}
