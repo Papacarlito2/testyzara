@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def npmTool = tool name: 'nodejs', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+                    def npmTool = tool name: 'NazwaTwojegoNodeJS', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
                     env.PATH = "${npmTool}/bin:${env.PATH}"
                     sh 'npm install'
                 }
@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def npmTool = tool name: 'nodejs', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+                    def npmTool = tool name: 'NazwaTwojegoNodeJS', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
                     env.PATH = "${npmTool}/bin:${env.PATH}"
                     docker.image('cypress/included:8.6.0').inside {
                         sh 'npx cypress run'
