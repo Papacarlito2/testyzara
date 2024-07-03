@@ -4,8 +4,7 @@
   "description": "Test automation for key functionalities of the Zara.com website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open"
+    "start": "xvfb-run npx cypress run --headless"
   },
   "author": "Patryk Czarnecki",
   "license": "ISC",
@@ -13,3 +12,4 @@
     "cypress": "^13.12.0"
   }
 }
+np
