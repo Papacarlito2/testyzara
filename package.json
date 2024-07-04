@@ -4,7 +4,7 @@
   "description": "Test automation for key functionalities of the Zara.com website",
   "main": "index.js",
   "scripts": {
-    "start": "xvfb-run npx cypress run --headless"
+    "start": "npx cypress run"
   },
   "author": "Patryk Czarnecki",
   "license": "ISC",
