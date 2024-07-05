@@ -20,7 +20,7 @@ class validInfo {
     }
 
     get logEmailValidInfo() {
-        return cy.get("#zds-19")
+        return cy.get("#zds-20")
     }
 
     get logMissingPassInfo() {
