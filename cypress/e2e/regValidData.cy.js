@@ -10,6 +10,7 @@ describe("User Registration Process", () => {
     })
     it("Registration with Valid Data", () => {
         base.openHomePage()
+        base.cookies.click()  
         base.login.click()
         base.reg.click()
 

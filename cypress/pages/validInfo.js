@@ -1,22 +1,22 @@
 class validInfo {
     get missFieldInfo() {
-        return cy.get("#zds-97")
+        return cy.get("#zds-102")
     }
 
     get invalidEmailInfo() {
-        return cy.get("#zds-77")
+        return cy.get("#zds-82")
     }
 
     get shortPassInfo() {
-        return cy.get("#zds-81")
+        return cy.get("#zds-86")
     }
 
     get termsInfo() {
-        return cy.get("#zds-1976")
+        return cy.get("#zds-1981")
     }
 
     get valueInfo() {
-        return cy.get("#zds-85")
+        return cy.get("#zds-90")
     }
 
     get logEmailValidInfo() {
@@ -24,7 +24,7 @@ class validInfo {
     }
 
     get logMissingPassInfo() {
-        return cy.get("#zds-23")
+        return cy.get("#zds-24")
     }
     
 }

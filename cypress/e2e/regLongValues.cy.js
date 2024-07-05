@@ -17,7 +17,7 @@ describe("User Registration Process", () => {
     base.login.click()
     base.reg.click()
 
-    const fields = [regValid.email, regValid.regPass, regValid.firstName, regValid.lastName]
+    const fields = [regValid.regEmail, regValid.regPass, regValid.firstName, regValid.lastName]
 
     fields.forEach(field => {
       regValid.typeAndCheckLength(field, longValue);
