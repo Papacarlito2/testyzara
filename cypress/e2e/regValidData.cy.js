@@ -1,10 +1,19 @@
 /// <reference types="cypress" />
 
+const { reportTestResult } = require('../support/testlink');
+
 import base from "../pages/base";
 import regValid from "../pages/regValid";
 import { correctEmail, correctPass, correctFirstName, correctLastName, correctTelNumber } from "../fixtures/regData.json"
 
 describe("User Registration Process", () => {
+
+    const testCaseId = 'Za-4';
+    const testPlanId = '151';
+    const buildId = '1';
+    const status = 'p'; // 'p' dla pozytywnego, 'f' dla negatywnego
+    const notes = 'Test passed successfully';
+    
     beforeEach(() => {
         cy.clearCookies()
     })
@@ -23,5 +32,7 @@ describe("User Registration Process", () => {
         telNumber.type(correctTelNumber)
         privCheck.check({force: true}).should("be.checked")
         regButton
+
+        reportTestResult(testCaseId, testPlanId, buildId, status, notes);
     })
 })
