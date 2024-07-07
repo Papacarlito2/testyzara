@@ -1,38 +1,37 @@
-/// <reference types="cypress" />
-
-const { reportTestResult } = require('../support/testlink');
-
 import base from "../pages/base";
 import regValid from "../pages/regValid";
-import { correctEmail, correctPass, correctFirstName, correctLastName, correctTelNumber } from "../fixtures/regData.json"
+import { correctEmail, correctPass, correctFirstName, correctLastName, correctTelNumber } from "../fixtures/regData.json";
+const { reportTestResult } = require('../support/testlink');
 
 describe("User Registration Process", () => {
-
-    const testCaseId = 'Za-4';
-    const testPlanId = '151';
-    const buildId = '1';
-    const status = 'p'; // 'p' dla pozytywnego, 'f' dla negatywnego
-    const notes = 'Test passed successfully';
-    
     beforeEach(() => {
-        cy.clearCookies()
-    })
+        cy.clearCookies();
+    });
+
     it("Registration with Valid Data", () => {
-        base.openHomePage()
-        base.cookies.click()  
-        base.login.click()
-        base.reg.click()
+        const testCaseId = 'Za-4';
+        const testPlanId = '151';
+        const buildId = '1';
+        let status = 'p'; // domyślnie ustaw na "p"
+        const notes = 'Test passed successfully';
 
-        const { regEmail, regPass, firstName, lastName, telNumber, privCheck, regButton } = regValid
+        base.openHomePage();
+        base.cookies.click();  
+        base.login.click();
+        base.reg.click();
 
-        regEmail.type(correctEmail)
-        regPass.type(correctPass)
-        firstName.type(correctFirstName)
-        lastName.type(correctLastName)    
-        telNumber.type(correctTelNumber)
-        privCheck.check({force: true}).should("be.checked")
-        regButton
+        const { regEmail, regPass, firstName, lastName, telNumber, privCheck } = regValid;
 
+        regEmail.type(correctEmail);
+        regPass.type(correctPass);
+        firstName.type(correctFirstName);
+        lastName.type(correctLastName);    
+        telNumber.type(correctTelNumber);
+
+        // Sprawdzenie czy checkbox jest zaznaczony
+        privCheck.should('be.checked');
+
+        // Bezpośrednie wywołanie reportTestResult po asercji
         reportTestResult(testCaseId, testPlanId, buildId, status, notes);
-    })
-})
+    });
+});
