@@ -9,14 +9,14 @@ describe("User Registration Process", () => {
     });
 
     it("Registration with Valid Data", () => {
-        const testCaseId = 'Za-4';
+        const testCaseId = '59';
         const testPlanId = '151';
         const buildId = '1';
-        let status = 'p'; // domyślnie ustaw na "p"
+        let status = 'f'; // domyślnie ustaw na "f"
         const notes = 'Test passed successfully';
 
         base.openHomePage();
-        base.cookies.click();  
+        base.cookies.click();
         base.login.click();
         base.reg.click();
 
@@ -24,14 +24,22 @@ describe("User Registration Process", () => {
 
         regEmail.type(correctEmail);
         regPass.type(correctPass);
-        firstName.type(correctFirstName);
-        lastName.type(correctLastName);    
+        firstName.type("sdasd");
+        lastName.type(correctLastName);
         telNumber.type(correctTelNumber);
 
-        // Sprawdzenie czy checkbox jest zaznaczony
-        privCheck.should('be.checked');
+        // Zaznaczenie checkboxa privCheck, jeśli nie jest zaznaczony, i sprawdzenie jego stanu
+        privCheck.check({ force: true }).should('be.checked');
 
-        // Bezpośrednie wywołanie reportTestResult po asercji
-        reportTestResult(testCaseId, testPlanId, buildId, status, notes);
+        // Ustalanie statusu na podstawie wyniku testu
+        cy.get('input[data-qa-input-qualifier="firstName"]').invoke('val').then(value => {
+            if (value === correctFirstName) {
+                status = 'p'; // status 'p' dla pozytywnego wyniku
+            }
+        }).then(() => {
+            // Wywołanie reportTestResult po zakończeniu sprawdzania stanu
+            reportTestResult(testCaseId, testPlanId, buildId, status, notes);
+        });
+        firstName.should("have.value", correctFirstName);
     });
 });
