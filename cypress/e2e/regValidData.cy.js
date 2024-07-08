@@ -26,9 +26,7 @@ describe("User Registration Process", () => {
         regPass.type(correctPass);
         firstName.type("sdasd");
         lastName.type(correctLastName);
-        telNumber.type(correctTelNumber);
-
-        // Zaznaczenie checkboxa privCheck, jeśli nie jest zaznaczony, i sprawdzenie jego stanu
+        telNumber.type(correctTelNumber);        
         privCheck.check({ force: true }).should('be.checked');
 
         // Ustalanie statusu na podstawie wyniku testu
