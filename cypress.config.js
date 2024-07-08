@@ -16,8 +16,7 @@ module.exports = defineConfig({
     viewportWidth: 1920,
     viewportHeight: 1080,
     waitForAnimations: true,
-    testIsolation: false,
-    browser: "/usr/bin/brave-browser",
+    testIsolation: false,    
     // Konfiguracja raportowania
     reporter: "cypress-multi-reporters",
     reporterOptions: {
