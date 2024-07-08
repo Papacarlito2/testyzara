@@ -8,8 +8,8 @@ module.exports = defineConfig({
     baseUrl: "https://www.zara.com/pl/",
     redirectionLimit: 3,
     retries: {
-      "runMode": 1,
-      "openMode": 1
+      runMode: 1,
+      openMode: 1
     },
     watchForFileChanges: true,
     chromeWebSecurity: false,
@@ -17,6 +17,21 @@ module.exports = defineConfig({
     viewportHeight: 1080,
     waitForAnimations: true,
     testIsolation: false,
-    "browser": "/usr/bin/brave-browser"
+    browser: "/usr/bin/brave-browser",
+    // Konfiguracja raportowania
+    reporter: "cypress-multi-reporters",
+    reporterOptions: {
+      reporterEnabled: "mochawesome, mocha-junit-reporter",
+      mochawesomeReporterOptions: {
+        reportDir: "cypress/results",
+        overwrite: false,
+        html: false,
+        json: true
+      },
+      mochaJunitReporterReporterOptions: {
+        mochaFile: "cypress/results/junit-report-[hash].xml",
+        toConsole: false
+      }
+    }
   },
 });

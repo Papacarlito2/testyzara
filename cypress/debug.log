@@ -1,0 +1,80 @@
+
+DevTools listening on ws://127.0.0.1:44837/devtools/browser/9503ec73-0842-4ba4-9a6a-f2869bea75ba
+
+================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        13.12.0                                                                        │
+  │ Browser:        Electron 118                                                                   │
+  │ Node Version:   v18.19.1 (/usr/bin/node)                                                       │
+  │ Specs:          1 found (regValidData.cy.js)                                                   │
+  │ Searched:       cypress/e2e/regValidData.cy.js                                                 │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  regValidData.cy.js                                                              (1 of 1)
+
+
+  User Registration Process
+    (Attempt 1 of 2) Registration with Valid Data
+    1) Registration with Valid Data
+
+
+  0 passing (31s)
+  1 failing
+
+  1) User Registration Process
+       Registration with Valid Data:
+
+      AssertionError: expected '<input#firstName88.zds-input-base__input>' to have value 'Jan', but the value was 'sdasd'
+      + expected - actual
+
+      -'sdasd'
+      +'Jan'
+      
+      at Context.eval (webpack://cypress_zara/./cypress/e2e/regValidData.cy.js:41:18)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     31 seconds                                                                       │
+  │ Spec Ran:     regValidData.cy.js                                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/patryk-czarnecki/Pulpit/Nowy folder/Cypress_Zara/cypress/screenshots/regVa     (1280x658)
+     lidData.cy.js/User Registration Process -- Registration with Valid Data (failed)               
+     .png                                                                                           
+  -  /home/patryk-czarnecki/Pulpit/Nowy folder/Cypress_Zara/cypress/screenshots/regVa     (1280x658)
+     lidData.cy.js/User Registration Process -- Registration with Valid Data (failed)               
+      (attempt 2).png                                                                               
+
+
+================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✖  regValidData.cy.js                       00:31        1        -        1        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✖  1 of 1 failed (100%)                     00:31        1        -        1        -        -  
+
+[568530:0708/132629.155172:ERROR:ssl_client_socket_impl.cc(975)] handshake failed; returned -1, SSL error code 1, net_error -100
