@@ -24,7 +24,7 @@ describe("User Registration Process", () => {
 
         regEmail.type(correctEmail);
         regPass.type(correctPass);
-        firstName.type("sdasd");
+        firstName.type(correctFirstName);
         lastName.type(correctLastName);
         telNumber.type(correctTelNumber);        
         privCheck.check({ force: true }).should('be.checked');
