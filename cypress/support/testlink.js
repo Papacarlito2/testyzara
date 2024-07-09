@@ -2,7 +2,7 @@ const axios = require('axios');
 const convert = require('xml-js');
 
 // Konfiguracja TestLinka
-const TESTLINK_API_URL = 'http://localhost/lib/api/xmlrpc/v1/xmlrpc.php'; // Adres IP kontenera TestLinka
+const TESTLINK_API_URL = 'http://testlink:80/lib/api/xmlrpc/v1/xmlrpc.php'; // Adres IP kontenera TestLinka
 const TESTLINK_API_KEY = 'b4486f7fffbfe0be0fbbd81af048f755';
 
 // Funkcja do przesyłania wyników testu

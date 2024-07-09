@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-09T10:51:23.195Z",
+    "end": "2024-07-09T10:51:38.662Z",
+    "duration": 15467,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e69baa95-a871-45e9-a2ce-ec8965c1730f",
+      "title": "",
+      "fullFile": "cypress/e2e/regValidData.cy.js",
+      "file": "cypress/e2e/regValidData.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "202aab21-af48-4ed9-b740-c9d46232a2cd",
+          "title": "User Registration Process",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration with Valid Data",
+              "fullTitle": "User Registration Process Registration with Valid Data",
+              "timedOut": null,
+              "duration": 15198,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const testCaseId = '59';\nconst testPlanId = '151';\nconst buildId = '1';\nlet status = 'f'; // domyślnie ustaw na \"f\"\nconst notes = 'Test passed successfully';\n_base.default.openHomePage();\n_base.default.cookies.click();\n_base.default.login.click();\n_base.default.reg.click();\nconst {\n  regEmail,\n  regPass,\n  firstName,\n  lastName,\n  telNumber,\n  privCheck\n} = _regValid.default;\nregEmail.type(_regData.correctEmail);\nregPass.type(_regData.correctPass);\nfirstName.type(_regData.correctFirstName);\nlastName.type(_regData.correctLastName);\ntelNumber.type(_regData.correctTelNumber);\nprivCheck.check({\n  force: true\n}).should('be.checked');\n// Ustalanie statusu na podstawie wyniku testu\ncy.get('input[data-qa-input-qualifier=\"firstName\"]').invoke('val').then(value => {\n  if (value === _regData.correctFirstName) {\n    status = 'p'; // status 'p' dla pozytywnego wyniku\n  }\n}).then(() => {\n  // Wywołanie reportTestResult po zakończeniu sprawdzania stanu\n  reportTestResult(testCaseId, testPlanId, buildId, status, notes);\n});\nfirstName.should(\"have.value\", _regData.correctFirstName);",
+              "err": {},
+              "uuid": "d443cdd5-f463-44dd-b41b-000132fb5792",
+              "parentUUID": "202aab21-af48-4ed9-b740-c9d46232a2cd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d443cdd5-f463-44dd-b41b-000132fb5792"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15198,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
